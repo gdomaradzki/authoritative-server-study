@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon --experimental-modules --inspect ./src/index.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gdomaradzki/authoritative-server-study.git"
