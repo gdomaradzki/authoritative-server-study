@@ -5,6 +5,8 @@ import Morgan from 'koa-morgan'
 import Serve from 'koa-static'
 import IO from 'socket.io'
 
+import Router from './router'
+
 class Server {
   constructor() {
     this.app = new Koa()
