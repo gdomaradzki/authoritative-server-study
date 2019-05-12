@@ -1,0 +1,26 @@
+{
+  "name": "authoritative-server-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdomaradzki/authoritative-server-study.git"
+  },
+  "author": "Gustavo Domaradzki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdomaradzki/authoritative-server-study/issues"
+  },
+  "homepage": "https://github.com/gdomaradzki/authoritative-server-study#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-helmet": "^4.1.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "nodemon": "^1.19.0",
+    "socket.io": "^2.2.0"
+  }
+}
