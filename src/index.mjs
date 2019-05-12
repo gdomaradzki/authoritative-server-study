@@ -19,7 +19,6 @@ class Server {
   config() {
     this.app.use(Helmet())
     this.app.use(Morgan('tiny'))
-    this.app.use(BodyParser())
     this.app.use(Router.routes())
     this.start()
   }
@@ -29,3 +28,5 @@ class Server {
     console.log(`Server running on http://localhost:${process.env.PORT}`)
   }
 }
+
+export default new Server()
