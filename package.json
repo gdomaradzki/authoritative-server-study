@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --experimental-modules --inspect ./src/index.mjs",
-    "dev:client": "parcel ./client/index.html"
+    "dev": "nodemon --experimental-modules --inspect ./src/index.mjs"
   },
   "repository": {
     "type": "git",
