@@ -33,8 +33,6 @@ class Server {
   setConnection() {
     this.io.on('connection', () => console.log('yay'))
   }
-
-  update() {}
 }
 
 export default new Server()
