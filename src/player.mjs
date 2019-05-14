@@ -3,24 +3,21 @@ export default class Player {
     this.id = id
     this.x = x
     this.y = y
-  }
-
-  update(dt) {
-    console.log(dt)
+    this.speed = 2
   }
 
   move(direction) {
     if (direction.left) {
-      this.x -= 10
+      this.x -= this.speed
     }
     if (direction.right) {
-      this.x += 10
+      this.x += this.speed
     }
-    if (direction.top) {
-      this.y -= 10
+    if (direction.up) {
+      this.y -= this.speed
     }
     if (direction.down) {
-      this.y += 10
+      this.y += this.speed
     }
   }
 

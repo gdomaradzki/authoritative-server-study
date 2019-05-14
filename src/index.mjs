@@ -43,12 +43,14 @@ class Server {
 
       this.addPlayer(client)
 
-      client.on('input', (direction) => {
+      client.on('player-input', (direction) => {
         this.handleInput(client.id, direction)
       })
 
       client.on('disconnect', () => {
         console.log(`User disconnected with id: ${client.id}`)
+        this.removePlayer(client.id)
+        this.io.emit('disconnects', client.id)
       })
     })
   }
@@ -73,24 +75,27 @@ class Server {
   }
 
   prepareUpdate(player) {
+    const filteredPlayers = Object.values(this.players).filter(
+      (p) => p.id !== player.id
+    )
+
+    const others = {}
+
+    filteredPlayers.forEach((p) => {
+      others[p.id] = p
+    })
+
     return {
       t: Date.now(),
       player: player.serialize(),
-      others: () => {
-        for (let id in this.players) {
-          return this.players[id].serialize
-        }
-      }
+      others
     }
   }
 
   addPlayer(client) {
     this.clients[client.id] = client
-    this.players[client.id] = new Player(
-      client.id,
-      500,
-      500
-    )
+    this.players[client.id] = new Player(client.id, 500, 500)
+    this.io.emit('new-player', this.players[client.id].serialize())
   }
 
   removePlayer(id) {
